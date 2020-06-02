@@ -10,3 +10,6 @@ INSERT INTO cliente (cedula, nombre, email, create_at) VALUES('888888','cesar','
 INSERT INTO cliente (cedula, nombre, email, create_at) VALUES('999999','rambo','rambo@rambo.com','2020-09-09');
 INSERT INTO cliente (cedula, nombre, email, create_at) VALUES('111111','shakira','shakira@shakira.com','2020-10-10');
 
+
+/* Datos de prueba para Telefono*/
+INSERT INTO telefono (numero, tipo, cliente_id, create_at) VALUES('1094917567','Celular',1094917567,'2020-01-01');
