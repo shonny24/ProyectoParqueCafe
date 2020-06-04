@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,45 +21,35 @@ import javax.persistence.TemporalType;
 import lombok.Data;
 
 @Data
-
 @Entity
-@Table(name="cliente")
-public class Cliente implements Serializable{
+@Table(name="compra")
+public class Compra implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name = "cliente_id")
-//	private Long id;
-	
 	@Id
-	private String cedula;
-	@Column(nullable = false)
-	private String nombre;
-	@Column(nullable = false, unique = true)
-	private String email;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long codigo;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "cliente_id")
-	private List<Telefono> telefonos;
-	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "cliente_id")
-	private List<Compra> compras;
-	
-	@Column(name = "create_at")
+	@Column(name = "fecha_compra")
 	@Temporal(TemporalType.DATE)
-	private Date createAt;
+	private Date fecha_compra;
 	
 	@PrePersist
 	public void prePersist() {
-		createAt = new Date();
-	}
-
-	public Cliente() {
-		telefonos = new ArrayList<>();
-		compras = new ArrayList<>();
+		fecha_compra = new Date();
 	}
 	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "pasaporte_codigo")
+	private List<Pasaporte> pasaportes;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "vehiculo_placa")
+	private List<Vehiculo> vehiculos;
+	
+	public Compra() {
+		pasaportes = new ArrayList<>();
+		vehiculos = new ArrayList<>();
+	}
 }
