@@ -2,7 +2,6 @@ package com.api.parquecafe.models.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,50 +11,36 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.Data;
 
 @Data
 
 @Entity
-@Table(name="cliente")
-public class Cliente implements Serializable{
-	
+@Table(name="proveedor")
+public class Proveedor implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name = "cliente_id")
-//	private Long id;
-	
 	@Id
-	private String cedula;
-	
+	private String nit;
 	@Column(nullable = false)
 	private String nombre;
-	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String email;
-	
+	@Column(nullable = false)
+	private String direccion;
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "cliente_id")
-	private List<Telefono> telefonos;
+	@JoinColumn(name = "proveedor_nit")
+	private List<TelefonoProveedor> telefonos;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "proveedor_nit")
+	private List<StockBodega> stock_bodega;
 	
-	@Column(name = "create_at")
-	@Temporal(TemporalType.DATE)
-	private Date createAt;
-	
-	@PrePersist
-	public void prePersist() {
-		createAt = new Date();
+	public Proveedor() {
+		telefonos = new ArrayList<>();
+		stock_bodega = new ArrayList<>();
 	}
 
-	public Cliente() {
-		telefonos = new ArrayList<>();
-	}
-	
 }
