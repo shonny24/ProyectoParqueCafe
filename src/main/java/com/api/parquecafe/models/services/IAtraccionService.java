@@ -6,7 +6,7 @@ import com.api.parquecafe.models.entity.Atraccion;
 
 public interface IAtraccionService {
 	
-public List<Atraccion> findAll();
+	public List<Atraccion> findAll();
 	
 	public Atraccion findById(Long id);
 	

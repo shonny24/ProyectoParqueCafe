@@ -16,31 +16,30 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.api.parquecafe.models.entity.Atraccion;
-import com.api.parquecafe.models.services.IAtraccionService;
-
+import com.api.parquecafe.models.entity.Producto;
+import com.api.parquecafe.models.services.IProductoService;
 
 //@CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/api")
-public class AtraccionRestController {
+public class ProductoRestController {
 	
 	@Autowired
-	private IAtraccionService atraccionService;
+	private IProductoService productoService;
 	
-	@GetMapping("/atracciones")
-	public List<Atraccion> index(){
-		return atraccionService.findAll();
+	@GetMapping("/productos")
+	public List<Producto> index(){
+		return productoService.findAll();
 	}
 	
-	@GetMapping("/atracciones/{codigo}")
+	@GetMapping("/productos/{codigo}")
 	public ResponseEntity<?> show(@PathVariable Long codigo) {
 		
-		Atraccion atraccion = null;
+		Producto producto = null;
 		Map<String, Object> response = new HashMap<>();
 		try {
 			
-			atraccion = atraccionService.findById(codigo);
+			producto = productoService.findById(codigo);
 			
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos");
@@ -48,78 +47,77 @@ public class AtraccionRestController {
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
-		if(atraccion == null) {
-			response.put("mensaje", "La atracción ".concat(codigo.toString().concat(" no existe en la base de datos!")));
+		if(producto == null) {
+			response.put("mensaje", "El producto ".concat(codigo.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<Atraccion>(atraccion, HttpStatus.OK);
+		return new ResponseEntity<Producto>(producto, HttpStatus.OK);
 	}
 	
-	@PostMapping("/atracciones")
-	public ResponseEntity<?> create(@RequestBody Atraccion atraccion) {
+	@PostMapping("/productos")
+	public ResponseEntity<?> create(@RequestBody Producto producto) {
 		
-		Atraccion atraccionNew = null;
+		Producto productoNew = null;
 		Map<String, Object> response = new HashMap<>();
 		
 		try {
-			atraccionNew = atraccionService.save(atraccion);
+			productoNew = productoService.save(producto);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar el insert en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		response.put("mensaje", "La atracción ha sido creada con éxito");
-		response.put("atraccion", atraccionNew);
+		response.put("mensaje", "El proveedor ha sido creado con éxito");
+		response.put("producto", productoNew);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/atracciones/{codigo}")
-	public ResponseEntity<?> update(@RequestBody Atraccion atraccion, @PathVariable Long codigo) {
+	@PutMapping("/productos/{codigo}")
+	public ResponseEntity<?> update(@RequestBody Producto producto, @PathVariable Long codigo) {
 		
-		Atraccion atraccionActual = atraccionService.findById(codigo);
-		Atraccion atraccionUpdated = null;
+		Producto productoActual = productoService.findById(codigo);
+		Producto productoUpdated = null;
 		
 		Map<String, Object> response = new HashMap<>();
 		
-		if(atraccionActual == null) {
-			response.put("mensaje", "Error: no se puede editar, la atracción ".concat(codigo.toString().concat(" no existe en la base de datos!")));
+		if(productoActual == null) {
+			response.put("mensaje", "Error: no se puede editar, el proveedor ".concat(codigo.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
 		
 		try {
 		
-		atraccionActual.setNombre(atraccion.getNombre());
-		atraccionActual.setDescripcion(atraccion.getDescripcion());
-		atraccionActual.setCapacidad(atraccion.getCapacidad());
+		productoActual.setNombre(producto.getNombre());
+		productoActual.setDescripcion(producto.getDescripcion());
 		
-		atraccionUpdated = atraccionService.save(atraccionActual);
+		productoUpdated = productoService.save(productoActual);
 		
 		} catch (DataAccessException e) {
-			response.put("mensaje", "Error al actualizar la atracción en la base de datos");
+			response.put("mensaje", "Error al actualizar el producto en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		response.put("mensaje", "La atracción ha sido actualizada con éxito");
-		response.put("atraccion", atraccionUpdated);
+		response.put("mensaje", "El producto ha sido actualizado con éxito");
+		response.put("producto", productoUpdated);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
 	
 	
-	@DeleteMapping("/atracciones/{codigo}")
+	@DeleteMapping("/productos/{codigo}")
 	public ResponseEntity<?> delete (@PathVariable Long codigo) {
 		
 		Map<String, Object> response = new HashMap<>();
 		
 		try {
-		atraccionService.delete(codigo);
+		productoService.delete(codigo);
 		} catch (DataAccessException e) {
-			response.put("mensaje", "Error al eliminar la atracción en la base de datos");
+			response.put("mensaje", "Error al eliminar el producto en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		response.put("mensaje", "La atracción ha sido eliminada con éxito");
+		response.put("mensaje", "El proveedor ha sido eliminado con éxito");
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
