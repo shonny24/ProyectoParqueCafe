@@ -15,6 +15,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 
@@ -36,13 +39,18 @@ public class Pasaporte implements Serializable{
 	private double precio;
 	private String descripcion;
 	
-	@JoinTable(
-	        name = "pasaporte_atraccion",
-	        joinColumns = @JoinColumn(name = "pasaporte_codigo", nullable = false),
-	        inverseJoinColumns = @JoinColumn(name="atraccion_codigo", nullable = false)
-	    )
+//	@ManyToMany()
+//	@OnDelete( action = OnDeleteAction.CASCADE )
+//	@JoinTable(
+//	        name = "pasaporte_atraccion",
+//	        joinColumns = @JoinColumn(name = "pasaporte_codigo", referencedColumnName = "codigo"),
+//	        inverseJoinColumns = @JoinColumn(name="atraccion_codigo", referencedColumnName = "codigo")
+//	    )
+//	
+////	@ManyToMany(cascade = CascadeType.ALL)
+//	private List<Atraccion> atracciones;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(targetEntity = Atraccion.class, mappedBy = "pasaporte_atraccion", cascade = CascadeType.ALL)
 	private List<Atraccion> atracciones;
 	
 	public Pasaporte() {

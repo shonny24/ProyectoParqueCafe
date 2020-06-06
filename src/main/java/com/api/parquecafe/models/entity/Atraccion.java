@@ -31,9 +31,13 @@ public class Atraccion implements Serializable{
 	@JoinColumn(name = "operador_id")
 	private List<Empleado> empleados;
 	
+	@ManyToMany(targetEntity = Pasaporte.class, cascade = CascadeType.ALL)
+	private List<Pasaporte> pasaportes;
+	
 	public Atraccion() {
 		restricciones = new ArrayList<>();
 		empleados = new ArrayList<>();
+		pasaportes = new ArrayList<>();
 	}		
 	
 }
