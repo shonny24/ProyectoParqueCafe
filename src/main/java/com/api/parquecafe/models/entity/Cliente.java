@@ -45,6 +45,10 @@ public class Cliente implements Serializable{
 	@JoinColumn(name = "cliente_id")
 	private List<Telefono> telefonos;
 	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "cliente_id")
+	private List<Compra> compras;
+	
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
@@ -56,8 +60,7 @@ public class Cliente implements Serializable{
 
 	public Cliente() {
 		telefonos = new ArrayList<>();
+		compras = new ArrayList<>();
 	}
-	
-	
 	
 }
