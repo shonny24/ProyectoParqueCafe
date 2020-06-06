@@ -211,4 +211,94 @@ INSERT INTO vehiculo (placa, compra_vehiculo_id, tipo_id, parqueadero_id)VALUES(
 INSERT INTO vehiculo (placa, compra_vehiculo_id, tipo_id, parqueadero_id)VALUES('HPD25E', 4, 1, 5);
 INSERT INTO vehiculo (placa, compra_vehiculo_id, tipo_id, parqueadero_id)VALUES('AYS125', 4, 2, 6);
 
+/* Datos de prueba para TipoEmpleado*/
+INSERT INTO tipo_empleado (tipo, salario)VALUES('Almacenista', 2500000);
+INSERT INTO tipo_empleado (tipo, salario)VALUES('Bodeguero', 2300000);
+INSERT INTO tipo_empleado (tipo, salario)VALUES('Operador', 2800000);
+
+/* Datos de prueba para Empleado*/
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1873409236', 'Andrés', 'Felipe', 'Otríz', '3186450921', 'Calle 15 # 8 - 65', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1382354093', 'Manuela', '', 'Perez', '3145832980', 'Carrera 18 # 4 - 21', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1260394021', 'Jorge', 'David', 'Meneses', '3195091637', 'Calle 14 # 7 - 13', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1863026483', 'Camilo', 'Stiven', 'Bernal', '3163908325', 'Carrera 35 # 7 - 18', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1163826498', 'Carlos', 'Anibal', 'Pinzón', '3172568910', 'Calle 3 # 1 - 34', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1604638243', 'Isabel', 'Cristina', 'Aguirre', '3162489051', 'Carrera 5 # 9 - 25', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1205379013', 'Gustavo', 'Eliecer', 'Guzmán', '3128345012', 'Calle 13 # 7 - 28', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1264034680', 'Asdrúbal', '', 'Torres', '3156230912', 'Carrera 18 # 13 - 6', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1004777342', 'Daniela', '', 'Tamayo', '3190036715', 'Calle 6 # 9 - 14', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1056284926', 'Laura', 'Valeria', 'Echeverry', '3178904327', 'Carrera 1 # 34 - 15', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1562093561', 'Hernán', 'Darío', 'Jiménez', '3145230954', 'Carrera 19 # 45 - 3', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1036727745', 'Welinton', '', 'Quiw', '3257045713', 'Calle 45 # 13 - 21', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1108427892', 'Jessica', 'Juliana', 'Salazar', '3163274914', 'Carrera 56 # 9 - 14', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1109372805', 'Esteban', '', 'Ramírez', '3172946104', 'Calle 24 # 78 - 10', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1027841569', 'Wilmar', 'Mauricio', 'Beltrán', '3172730156', 'Calle 34 # 13 - 67', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1026741123', 'Frederick', 'Darío', 'Díaz', '3250561527', 'Carrera 52 # 74 - 14', 3);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1623956771', 'Cristian', 'Felipe', 'Hortúa', '3124448101', 'Calle 19 # 13 - 75', 2);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1037728803', 'Juan', 'Andrés', 'Arboleda', '3142652772', 'Carrera 24 # 8 - 45', 2);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1123244709', 'Alejandra', '', 'Soto', '3184250927', 'Carrera 15 # 8 - 75', 2);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1734002571', 'Maria', 'Camila', 'Muñoz', '3167034163', 'Calle 55 # 13 - 51', 1);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1992730256', 'Alex', '', 'Quintero', '3190034715', 'Calle 63 # 13 - 25', 1);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1005427638', 'Juan', 'José', 'Valencia', '3271904572', 'Carrera 10 # 9 - 14', 1);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1624861890', 'Jorge', '', 'Álvarez', '3186520945', 'Calle 15 # 90 - 35', 1);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1032846301', 'Jhonny', 'Javier', 'Bustos', '3198362863', 'Calle 15 # 8 - 65', 1);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1002638421', 'Milady', '', 'González', '3180450371', 'Carrera 17 # 23 - 15', 1);
+INSERT INTO empleado (cedula, primer_nombre, segundo_nombre, apellido, telefono, direccion, tipo_empleado_codigo)VALUES('1782539291', 'Nancy', '', 'Torres', '3153261730', 'Calle 14 # 19 - 25', 1);
+
+/* Datos de prueba para Almacen*/
+INSERT INTO almacen (nombre, capacidad, empleado_cedula)VALUES('Almacen 1', 2500, '1734002571');
+INSERT INTO almacen (nombre, capacidad, empleado_cedula)VALUES('Almacen 2', 3500, '1992730256');
+INSERT INTO almacen (nombre, capacidad, empleado_cedula)VALUES('Almacen 3', 5000, '1005427638');
+INSERT INTO almacen (nombre, capacidad, empleado_cedula)VALUES('Almacen 4', 4800, '1624861890');
+INSERT INTO almacen (nombre, capacidad, empleado_cedula)VALUES('Almacen 5', 3700, '1032846301');
+INSERT INTO almacen (nombre, capacidad, empleado_cedula)VALUES('Almacen 6', 3000, '1002638421');
+INSERT INTO almacen (nombre, capacidad, empleado_cedula)VALUES('Almacen 7', 5500, '1782539291');
+
+/* Datos de prueba para Bodega*/
+INSERT INTO bodega (nombre, capacidad, telefono, empleado_cedula)VALUES('Bodega 1', 35000, '7556712', '1623956771');
+INSERT INTO bodega (nombre, capacidad, telefono, empleado_cedula)VALUES('Bodega 2', 45000, '7555634', '1037728803');
+INSERT INTO bodega (nombre, capacidad, telefono, empleado_cedula)VALUES('Bodega 3', 28000, '7559832', '1123244709');
+
+/* Datos de prueba para Proveedor*/
+INSERT INTO proveedor (nit, nombre, email, direccion)VALUES('12345','Proveedor 1', 'email1@gmail.com', 'Carrera 5 # 13 - 78');
+INSERT INTO proveedor (nit, nombre, email, direccion)VALUES('67890','Proveedor 2', 'email2@gmail.com', 'Calle 15 # 43 - 59');
+INSERT INTO proveedor (nit, nombre, email, direccion)VALUES('24680','Proveedor 3', 'email3@gmail.com', 'Carrera 58 # 36 - 28');
+INSERT INTO proveedor (nit, nombre, email, direccion)VALUES('13579','Proveedor 4', 'email4@gmail.com', 'Carrera 56 # 23 - 88');
+INSERT INTO proveedor (nit, nombre, email, direccion)VALUES('54321','Proveedor 5', 'email5@gmail.com', 'Calle 78 # 33 - 63');
+
+/* Datos de prueba para TelefonoProveedor*/
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('3205761283', 'Celular', '12345');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('7551502', 'Fijo', '12345');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('3194926284', 'Celular', '67890');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('7450361', 'Fijo', '67890');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('3219472016', 'Celular', '24680');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('7559253', 'Fijo', '24680');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('31740275128', 'Celular', '13579');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('7450472', 'Fijo', '13579');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('3273921638', 'Celular', '54321');
+INSERT INTO telefono_proveedor (numero, tipo, proveedor_nit)VALUES('7450247', 'Fijo', '54321');
+
+/* Datos de prueba para Proveedor*/
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 1', 'Descripción producto 1', 25000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 2', 'Descripción producto 2', 18000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 3', 'Descripción producto 3', 28000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 4', 'Descripción producto 4', 25000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 5', 'Descripción producto 5', 26000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 6', 'Descripción producto 6', 4000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 7', 'Descripción producto 7', 15000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 8', 'Descripción producto 8', 27500);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 9', 'Descripción producto 9', 18500);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 10', 'Descripción producto 10', 16000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 11', 'Descripción producto 11', 15000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 12', 'Descripción producto 12', 35000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 13', 'Descripción producto 13', 55000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 14', 'Descripción producto 14', 15800);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 15', 'Descripción producto 15', 17000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 16', 'Descripción producto 16', 26000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 17', 'Descripción producto 17', 17000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 18', 'Descripción producto 18', 23000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 19', 'Descripción producto 19', 18000);
+INSERT INTO proveedor (nombre, descripcion, precio_proveedor)VALUES('Producto 20', 'Descripción producto 20', 34000);
+
+
+
 
