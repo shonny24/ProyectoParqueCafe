@@ -19,13 +19,13 @@ public class Vehiculo implements Serializable{
 	private static final long serialVersionUID = 1L;
 		
 	@Id
-	private String Placa;
+	private String placa;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "vehiculo_placa")
+	@JoinColumn(name = "tipo_id")
 	private TipoVehiculo tVehiculo;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "vehiculo_parqueadero")
+	@JoinColumn(name = "parqueadero_id")
 	private Parqueadero parqueadero;	
 }

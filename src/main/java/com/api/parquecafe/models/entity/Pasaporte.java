@@ -32,8 +32,8 @@ public class Pasaporte implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
-	private double precio;
 	private String nombre;
+	private double precio;
 	private String descripcion;
 	
 	@JoinTable(
