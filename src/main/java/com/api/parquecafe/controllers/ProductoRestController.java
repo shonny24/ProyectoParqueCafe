@@ -90,6 +90,7 @@ public class ProductoRestController {
 		
 		productoActual.setNombre(producto.getNombre());
 		productoActual.setDescripcion(producto.getDescripcion());
+		productoActual.setPrecio_proveedor(producto.getPrecio_proveedor());
 		
 		productoUpdated = productoService.save(productoActual);
 		
@@ -117,7 +118,7 @@ public class ProductoRestController {
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		response.put("mensaje", "El proveedor ha sido eliminado con éxito");
+		response.put("mensaje", "El producto ha sido eliminado con éxito");
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 
