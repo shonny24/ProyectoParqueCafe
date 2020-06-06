@@ -17,6 +17,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Data
@@ -41,10 +43,12 @@ public class Cliente implements Serializable{
 	@Column(nullable = false, unique = true)
 	private String email;
 	
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "cliente_id")
 	private List<Telefono> telefonos;
 	
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "cliente_id")
 	private List<Compra> compras;

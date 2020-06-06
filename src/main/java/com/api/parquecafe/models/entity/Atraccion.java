@@ -2,7 +2,9 @@ package com.api.parquecafe.models.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 import lombok.Data;
@@ -12,6 +14,22 @@ import lombok.Data;
 @Entity
 @Table(name="atraccion")
 public class Atraccion implements Serializable{
+	
+	public Atraccion(Long codigo, String nombre, String descripcion, Integer capacidad, List<Restriccion> restricciones,
+			List<Empleado> empleados) {
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.capacidad = capacidad;
+		this.restricciones = restricciones;
+		this.empleados = empleados;
+	}	
+	
+	public Atraccion() {
+		restricciones = new ArrayList<>();
+		empleados = new ArrayList<>();
+		pasaportes = new ArrayList<>();
+	}
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -31,13 +49,13 @@ public class Atraccion implements Serializable{
 	@JoinColumn(name = "operador_id")
 	private List<Empleado> empleados;
 	
-	@ManyToMany(targetEntity = Pasaporte.class, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(
+	        name = "pasaporte_atraccion",
+	        joinColumns = @JoinColumn(name = "pasaporte_codigo"),
+	        inverseJoinColumns = @JoinColumn(name="atraccion_codigo")
+	    )
 	private List<Pasaporte> pasaportes;
-	
-	public Atraccion() {
-		restricciones = new ArrayList<>();
-		empleados = new ArrayList<>();
-		pasaportes = new ArrayList<>();
-	}		
-	
+
+
 }
