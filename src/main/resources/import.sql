@@ -14,7 +14,7 @@ INSERT INTO cliente (cedula, nombre, email, create_at) VALUES('1','Terminator','
 /* Datos de prueba para Telefono*/
 INSERT INTO telefono (numero, tipo, cliente_id, create_at) VALUES('7423333','Fijo','1094917567','2020-01-01');
 INSERT INTO telefono (numero, tipo, cliente_id, create_at) VALUES('7458896','Fijo','1094917567','2019-01-01');
-INSERT INTO telefono (numero, tipo, cliente_id, create_at) VALUES('3147803543','Celular','22','2020-25-02');
+INSERT INTO telefono (numero, tipo, cliente_id, create_at) VALUES('3147803543','Celular','22','2020-12-02');
 INSERT INTO telefono (numero, tipo, cliente_id, create_at) VALUES('3147802547','Celular','22','2020-04-10');
 INSERT INTO telefono (numero, tipo, cliente_id, create_at) VALUES('3113382507','Celular','33','2020-01-01');
 INSERT INTO telefono (numero, tipo, cliente_id, create_at) VALUES('3128396738','Celular','44','2020-02-11');

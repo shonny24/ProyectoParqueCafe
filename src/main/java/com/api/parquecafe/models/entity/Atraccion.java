@@ -27,12 +27,13 @@ public class Atraccion implements Serializable{
 	@JoinColumn(name = "atraccion_restriccion")
 	private List<Restriccion> restricciones;
 	
-//	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//	@JoinColumn(name = "operador_id")
-//	private List<Empleado> empleados;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "operador_id")
+	private List<Empleado> empleados;
 	
 	public Atraccion() {
 		restricciones = new ArrayList<>();
+		empleados = new ArrayList<>();
 	}		
 	
 }
