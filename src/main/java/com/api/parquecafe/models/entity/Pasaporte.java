@@ -2,7 +2,9 @@ package com.api.parquecafe.models.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 
@@ -14,6 +16,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -28,6 +33,18 @@ public class Pasaporte implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	public Pasaporte(Long codigo, String nombre, double precio, String descripcion) {
+
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.descripcion = descripcion;
+	}
+	
+	public Pasaporte() {
+
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
@@ -36,16 +53,5 @@ public class Pasaporte implements Serializable{
 	private double precio;
 	private String descripcion;
 	
-	@JoinTable(
-	        name = "pasaporte_atraccion",
-	        joinColumns = @JoinColumn(name = "pasaporte_codigo", nullable = false),
-	        inverseJoinColumns = @JoinColumn(name="atraccion_codigo", nullable = false)
-	    )
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Atraccion> atracciones;
-	
-	public Pasaporte() {
-		atracciones = new ArrayList<>();
-	}
 }
