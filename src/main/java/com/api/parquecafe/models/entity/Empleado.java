@@ -49,9 +49,14 @@ public class Empleado implements Serializable {
 	@JoinColumn(name = "empleado_cedula")
 	private List<Almacen> almacenes;
 	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "empleado_cedula")
+	private List<Atraccion> atracciones;
+	
 	public Empleado() {
 		bodegas = new ArrayList<>();
 		almacenes = new ArrayList<>();
+		atracciones = new ArrayList<>();
 	}
 
 }

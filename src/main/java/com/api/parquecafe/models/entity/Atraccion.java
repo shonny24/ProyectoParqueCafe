@@ -45,17 +45,9 @@ public class Atraccion implements Serializable{
 	@JoinColumn(name = "atraccion_restriccion")
 	private List<Restriccion> restricciones;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "operador_id")
-	private List<Empleado> empleados;
+
+	public Atraccion() {
+		restricciones = new ArrayList<>();
+	}		
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(
-	        name = "pasaporte_atraccion",
-	        joinColumns = @JoinColumn(name = "pasaporte_codigo"),
-	        inverseJoinColumns = @JoinColumn(name="atraccion_codigo")
-	    )
-	private List<Pasaporte> pasaportes;
-
-
 }
